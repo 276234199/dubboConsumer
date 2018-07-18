@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: dubbo-spring-boot-consumer
+
+server:
+  port: 9001
+
+dubbo:
+  application:
+    name: dubbo-spring-boot-consumer
+    id: dubbo-spring-boot-consumer
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 12345
+  registry:
+      id: consumer-reg
+      address: localhost:2181
+      protocol: zookeeper
+      client: curator
+      timeout: 30000
+  consumer:
+    client: netty4
